@@ -7,7 +7,7 @@ export function MainSection() {
     <section className="relative min-h-[80vh] flex items-center justify-center">
       <div className="container mx-auto px-4 text-center">
         <div className="max-w-4xl mx-auto gap-4 p-10">
-          <div className="inline-flex items-center px-3 py-2 rounded-full bg-black/30 border border-border text-foreground text-sm mb-6">
+          <div className="inline-flex items-center px-3 py-2 rounded-full bg-black/30 border border-border text-foreground text-xs sm:text-sm mb-6">
             <Zap className="w-4 h-4 mr-2"/>
             Comunidade que compartilha conhecimento
           </div>
@@ -25,7 +25,7 @@ export function MainSection() {
               </Button>
             </a>
           </div>
-          <div className="mt-12 mx-20 flex justify-around">
+          <div className="sm:mt-12 sm:mx-20 sm:flex-nowrap flex justify-center items-center flex-wrap gap-6 mt-5">
             <div className="flex gap-2 items-center text-zinc-400">
               <CodeXml className="text-zinc-200"/>
               <p>Artigos técnicos</p>
