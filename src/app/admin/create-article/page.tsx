@@ -15,9 +15,9 @@ import { Editor } from '@tiptap/react';
 import { useState } from "react";
 import { useEffect } from "react";
 
-import RendersHTML from "@/src/components/pages/createArticle/rendersHTML";
-import FormArticle from '@/src/components/pages/createArticle/formArticle';
-import { HeaderCreate } from '@/src/components/pages/createArticle/headerCreate';
+import RendersHTML from "@/src/components/pages/admin/createArticle/rendersHTML";
+import FormArticle from '@/src/components/pages/admin/createArticle/formArticle';
+import { HeaderCreate } from '@/src/components/pages/admin/createArticle/headerCreate';
 import React from 'react';
 
 export default function CreateArticle() {
