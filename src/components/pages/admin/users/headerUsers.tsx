@@ -32,7 +32,7 @@ export default function UsersPageHeader() {
             Adicionar Usuário
           </Button>
         </DialogTrigger>
-        <DialogContent className="bg-black/50">
+        <DialogContent>
           <DialogHeader>
             <DialogTitle className="m-0">Crie um novo usuário</DialogTitle>
             <DialogDescription>

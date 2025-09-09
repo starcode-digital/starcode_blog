@@ -1,6 +1,6 @@
 import { Eye, User, Calendar, Tags } from 'lucide-react';
 import { Separator } from '@/components/ui/separator';
-import Arch from '../../icons/arch';
+import Arch from '../../../icons/arch';
 
 export default function RendersHTML({ 
   html,
