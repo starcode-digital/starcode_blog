@@ -1,8 +1,9 @@
 import { Button } from "@/components/ui/button"
-import { Search } from "lucide-react"
+import { Crown, LayoutPanelLeft, Search } from "lucide-react"
 import { Input } from "@/components/ui/input"
 import Link from "next/link"
 import { Discord } from "../icons/discord"
+import { user } from "@/src/Interfaces/user"
 
 import { Menu, Newspaper, BookOpenText, Zap, Info } from "lucide-react"
 
@@ -17,6 +18,9 @@ import {
 } from "@/components/ui/sheet"
 
 export function Header() {
+
+  const currentUser = user().user;
+
   return (
     <header className="border-b border-border bg-black/70 dark:bg-zinc-900/10 backdrop-blur supports-[backdrop-filter]:bg-background/60 sticky top-0 z-50 px-4 py-3 flex justify-between">
       <div className="flex gap-6 items-center">
@@ -40,6 +44,7 @@ export function Header() {
         </div>
       </div>
       <div className="flex gap-4 items-center">
+      { currentUser !== "admin" ?        
         <div className="hidden md:flex gap-4 items-center">
           <div className="flex items-center">
             <Input placeholder="Pesquisar" className="w-[300px] md:w-[200px] lg:w-[300px]" />
@@ -53,7 +58,14 @@ export function Header() {
               Discord
             </Button>
           </a>
-        </div>
+        </div> : 
+        <Link href="/admin" rel="noopener noreferrer">
+          <Button variant={"default"} >
+            <LayoutPanelLeft size={100}/>
+            Painel admin
+          </Button>
+        </Link>
+      }
         <div className="lg:hidden">
           <Sheet>
             <SheetTrigger className="p-2 rounded-md hover:bg-zinc-800/50">

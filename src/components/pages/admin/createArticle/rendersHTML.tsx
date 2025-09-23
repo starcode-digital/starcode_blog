@@ -1,6 +1,8 @@
-import { Eye, User, Calendar, Tags } from 'lucide-react';
+import { Eye, User, Calendar, Tags} from 'lucide-react';
 import { Separator } from '@/components/ui/separator';
 import Arch from '../../../icons/arch';
+import { Button } from '@/components/ui/button';
+import Link from 'next/link';
 
 export default function RendersHTML({ 
   html,
@@ -17,12 +19,30 @@ export default function RendersHTML({
   category: string,
   imageUrl: string,
 }) {
+
+  function handlePreview(){
+    localStorage.setItem('articlePreview', JSON.stringify({
+      html,
+      title,
+      description,
+      author,
+      category,
+      imageUrl
+    }));
+  }
   return (
-    <div className="block flex-col border rounded-sm p-4 bg-zinc-950 md:w-3/4 sticky top-24 overflow-auto max-h-[100vh] z-1">
-      <p className='flex items-center gap-2 text-base mb-4 font-bold text-foreground'>
-        <Eye size={20}/>
-        Preview do Artigo
-      </p>
+    <div className="block flex-col border rounded-sm p-4 bg-zinc-950 md:w-3/4 sticky top-24 overflow-auto max-h-[100vh] z-1 ">
+      <div className='flex items-center justify-between mb-4'>
+        <p className='flex items-center gap-2 text-base mb-4 font-bold text-foreground'>
+          <Eye size={20}/>
+          Preview do Artigo
+        </p>
+        <Link href="/admin/create-article/preview-article" target='_blank' onClick={handlePreview}>
+          <Button type='button' variant="outline" size="sm">
+            Ver Prévia
+          </Button>
+        </Link>
+      </div>
       <div className="">
           <div className="inline-flex px-2 py-1 rounded-full bg-black/30 border border-border text-foreground text-sm mb-3 mt-3 gap-2">
             <Arch size={18}/>

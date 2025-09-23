@@ -1,5 +1,5 @@
 export interface IUsers{
-  id?: number;
+  id: number;
   name?: string;
   email?: string;
   role?: "Administrador" | "Editor" | "Visualizador";

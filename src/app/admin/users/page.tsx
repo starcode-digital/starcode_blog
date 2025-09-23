@@ -9,7 +9,7 @@ export default function UsersPage() {
     <main className="min-h-screen bg-black grid-pattern">
       <div className="flex">
         <AdminSidebar></AdminSidebar>
-        <div className="container mx-auto px-4 py-5">
+        <div className="container mx-auto px-4">
           <UsersPageHeader></UsersPageHeader>
           <div className="flex flex-col gap-5">
             <FilterUsers></FilterUsers>

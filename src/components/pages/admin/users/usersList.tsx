@@ -9,9 +9,20 @@ import {
   TableHeader,
   TableRow,
 } from "@/components/ui/table"
-import { Checkbox } from "@/components/ui/checkbox";
 import { Badge } from "@/components/ui/badge";
 import { Button } from "@/components/ui/button";
+import React from "react";
+import { Checkbox } from "@/components/ui/checkbox";
+import {
+  Pagination,
+  PaginationContent,
+  PaginationEllipsis,
+  PaginationItem,
+  PaginationLink,
+  PaginationNext,
+  PaginationPrevious,
+} from "@/components/ui/pagination"
+import style from "./style.module.css"
 
 
 export default function usersList(){
@@ -42,18 +53,39 @@ export default function usersList(){
       date: new Date("2023-03-10"),
     },
   ]
+  
 
   return(
-    <div className="flex flex-col border rounded-sm p-5 bg-zinc-950 z-1 gap-5">
-      <div>
-        <div className="flex items-center gap-2 text-base mb-4 font-bold text-foreground">
+    <div className={`flex flex-col border rounded-sm p-5 bg-zinc-950 z-1 gap-5 ${style.reset}`}>
+      <div className="m-2"> 
+        <div className="flex items-center gap-2 text-base mb-2 font-bold text-foreground">
           <Users/>
           <p>Lista de Usuários</p>
         </div>
           <p className="text-sm text-zinc-500">{users.length} Usuário(s) encontrado(s)</p>
       </div>
       <Table>
-        <TableCaption>Lista de usuários do sistema</TableCaption>
+        <TableCaption>
+          <Pagination className="m-0">
+            <PaginationContent>
+              <PaginationItem className="list-none">
+                <PaginationPrevious className="text-white"/>
+              </PaginationItem>
+              <PaginationItem className="list-none">
+                <PaginationLink className="text-white">1</PaginationLink>
+              </PaginationItem>
+              <PaginationItem className="list-none">
+                <PaginationLink className="text-white">2</PaginationLink>
+              </PaginationItem>
+              <PaginationItem className="list-none">
+                <PaginationLink className="text-white">3</PaginationLink>
+              </PaginationItem>
+              <PaginationItem className="list-none">
+                <PaginationNext className="text-white"/>
+              </PaginationItem>
+            </PaginationContent>
+          </Pagination>
+        </TableCaption>
         <TableHeader>
           <TableRow>
             <TableHead className="w-[100px]"><Checkbox></Checkbox></TableHead>
